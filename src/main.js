@@ -9,6 +9,9 @@ import appScss from "./App.scss";
 import httpClient from './providers/httpClient';
 //	项目配置
 import appConfig from './providers/appConfig';
+//	第三方依赖——代码美化
+import "../static/dependence/prism/prism.css";
+import "../static/dependence/prism/prism.js";
 
 //	关闭生产提示
 Vue.config.productionTip = false;
@@ -41,6 +44,8 @@ router.afterEach((to, from) => {
 	//	回到顶部
 	document.documentElement.scrollTop = 0;
 });
+
+Vue.component('paperClip', () => import("./components/common-component/paperClip.vue"));
 
 new Vue({
 	el: '#app',

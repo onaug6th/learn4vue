@@ -1,7 +1,59 @@
-//  甜叫，底部样式
-.swal-footer{
-    text-align: center;
+//  项目全局样式配置文件
+
+button{
+    outline: none;
+    border: none;
 }
+
+img{
+    width: 100%;
+    margin: 15px 0px;
+}
+
+ul{
+    padding: 0px;
+}
+
+.container{
+    width: 970px;
+}
+
+.h-red{
+    color: red;
+}
+
+div.paragraph{
+    margin-bottom: 40px;
+}
+
+div.example{
+    background: #ccc;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+p.extend{
+    background: #2d2d2d;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    color: #ccc;
+    padding: 1em;
+    margin: .5em 0;
+}
+
+.fade-enter-active, .fade-leave-active {
+    transition: opacity .5s;
+}
+
+.fade-enter, .fade-leave-to{
+    opacity: 0;
+}
+
+.body{
+    color: #2c3e50;
+}
+
 //  文字选中样式
 *::selection {
     background: #aad3fe;

@@ -1,7 +1,8 @@
 <template>
 
     <div class="container">
-        你好，这里什么都没有
+
+        
     </div>
 
 </template>
@@ -9,26 +10,27 @@
 <script>
 
 export default {
-    name : "about",
+    name: 'example',
+    components: {
+        
+    },
     data(){
         return {
-            
+            lessionList:[]
         }
     },
-    components:{
+    computed:{
         
     },
-    mounted() {
-        
+    mounted(){
 
     },
-    methods:{
+    methods : {
+
     }
 }
 </script>
-
-
 <style lang="scss" scoped>
-
+    
 
 </style>
