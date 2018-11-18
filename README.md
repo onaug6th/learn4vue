@@ -5,7 +5,7 @@
 ### 项目启动
 
 ```
-git clone https://github.com/onaug6th/onaug6th
+git clone https://github.com/onaug6th/learn4vue
 
 cd learn4vue
 
