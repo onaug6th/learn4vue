@@ -63,13 +63,13 @@
             <p>现在，我们可以用更加方便的方法来渲染我们的页面。</p>
             <p>使用vue.js 的 <span class="h-red">v-for</span> 来进行一系列复杂模板渲染</p>
         </div>
-
+        <hr>
         <div class="paragraph">
             <h3>v-for</h3>
             <p>一个简单的例子</p>
-            <img src="./pic5.png" alt="">
-            <hr>
             <img src="./pic3.png" alt="">
+            <hr>
+            <img src="./pic5.png" alt="">
             <hr>
             <img src="./pic4.png" alt="">
             
@@ -80,7 +80,7 @@
             <p>渲染非常的简单。当然，如果循环一个复杂的列表的话，HTML结构也会相对应的复杂。同时我们也能够往函数里传递<span class="h-red">Object类型</span>的参数。</p>
             <img src="./pic6.png" alt="">
         </div>
-        <div class="content">
+        <div class="content" style="width: 60%;margin: 0px auto;">
             <!-- 产品列表循环 -->
             <ul class="product-list">
                 <li class="product" v-for="(item, index) in productListData" :key="index" :data-index="index">
@@ -162,6 +162,7 @@
             </div>
             <img src="./pic8.png" alt="">
         </div>
+        <hr>
         <div class="paragraph">
             <h3>v-on</h3>
             <h4>对DOM事件进行监听处理</h4>
@@ -195,6 +196,7 @@
             <p>例如这里只对回车事件进行监听，你在键盘上敲什么我都不管，我只管监听回车事件。</p>
             <p><a target="blank" href="https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6">按键修饰符</a></p>
         </div>
+        <hr>
         <div class="paragraph">
             <h3> v-model </h3>
             <h4> 直观的感受数据双向数据绑定 </h4>
@@ -284,7 +286,8 @@
             <p>好比开车，jquery就像手动档，而mvvm框架就像自动档。手动挡有着自主操控的乐趣，而自动挡免去了很多复杂繁琐的操作。</p>
         </div>
         <div class="paragraph">
-
+            <p>总结：</p>
+            <h3>解放生产力，懒惰带来进步。</h3>
         </div>
     </div>
 
@@ -418,7 +421,6 @@ export default {
             &:nth-child(1) {
                 padding: 30px 20px 10px;
                 flex: 1;
-                overflow: hidden;
             }
             &:nth-child(2) {
                 flex: 10;
