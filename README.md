@@ -1,6 +1,6 @@
 # learn 4 vue
 
-快速上手vue.js
+带你从零入门 vue.js
 
 ### 项目启动
 
