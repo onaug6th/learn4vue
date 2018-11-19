@@ -10,10 +10,17 @@ const routes = [
         name: "home",
         component: () => import("./views/Home.vue")
     },
+    //  课程一
     {
         path: "/lession1",
         name: "lession1",
         component: () => import("./components/lession1/lession1.vue")
+    },
+    //  课程二
+    {
+        path: "/lession2",
+        name: "lession2",
+        component: () => import("./components/lession2/lession2.vue")
     },
     //  关于
     {

@@ -80,7 +80,9 @@ const methods = {
         var parity = [1, 0, 'x', 9, 8, 7, 6, 5, 4, 3, 2];
         var total = 0;
         for (var i = 0; i < coefficient.length; i++) {
-            if (isNaN(id[i])) return false;
+            if (isNaN(id[i])) {
+                return false
+            };
             total += id[i] * coefficient[i];
         }
 

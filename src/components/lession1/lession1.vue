@@ -44,7 +44,7 @@
             <p @click="toggleExtend('onclick')">3. 只能在模板渲染结束后给指定的元素添加鼠标事件，或者内联写上 onclick 等属性<paperClip></paperClip></p>
 
             <p class="extend" v-if="extendObj['onclick']">
-                onclick中的属性必须指向全局，全局属性是非常危险的。因为可能多个地方声明了同名属性，而且在字符串拼接中，如果需要往onclick方法中传递一个对象，是不能实现的。
+                onclick中的属性会从全局寻找这个变量，全局属性是非常危险的。因为可能多个地方声明了同名属性，而且在字符串拼接中，如果需要往onclick方法中传递一个对象，是不能实现的。
                 <span class="h-red" @click="toggleExtend('whyNotOnclick')">为什么不能实现？<paperClip></paperClip></span>
                 <pre class="language-javascript" v-if="extendObj['whyNotOnclick']">
         <code>'&lt;div onclick="sayName(' + resultData + ')&gt;&lt;/div&gt;'</code>
@@ -80,7 +80,7 @@
             <p>渲染非常的简单。当然，如果循环一个复杂的列表的话，HTML结构也会相对应的复杂。同时我们也能够往函数里传递<span class="h-red">Object类型</span>的参数。</p>
             <img src="./pic6.png" alt="">
         </div>
-        <div class="content" style="width: 60%;margin: 0px auto;">
+        <div class="content"    >
             <!-- 产品列表循环 -->
             <ul class="product-list">
                 <li class="product" v-for="(item, index) in productListData" :key="index" :data-index="index">
@@ -131,10 +131,10 @@
             <div class="form-group example">
                 <button class="btn btn-primary" @click="isHeroShow = !isHeroShow">切换显示</button>
                 <div v-if="isHeroShow">
-                    Now you see me
+                    <p>Now you see me</p>
                 </div>
             </div>
-            <p>同时也能绑定方法，在方法中返回结果。</p>
+            <p>同时也能接收方法，在方法中返回结果。根据返回结果来执行 v-if</p>
             <img src="./pic7.png" alt="">
             <p>第一行的时候，提到了摧毁而并非隐藏。是因为 v-if 指令会将html从DOM中完全抹掉</p>
             <p>绑定值为false时，并不会对false的区域进行渲染。在绑定的值为真时，再重新插入到DOM中。</p>
@@ -220,7 +220,7 @@
                 </code>
             </pre>
             <p>如果你觉得其实这还好啊，那如果有的控件类型是单选框，复选框，下拉框呢？</p>
-            <p>在mvvm框架中，只需要将数据交给框架进行管理。来完成数据更新的事情。</p>
+            <p>在mvvm框架中，只需要将数据交给框架进行管理。来完成数据同步的事情。</p>
             <div class="example">
                 <form class="form-horizontal">
                     <div class="form-group">
@@ -284,10 +284,6 @@
                 </div>
             </div>
             <p>好比开车，jquery就像手动档，而mvvm框架就像自动档。手动挡有着自主操控的乐趣，而自动挡免去了很多复杂繁琐的操作。</p>
-        </div>
-        <div class="paragraph">
-            <p>总结：</p>
-            <h3>解放生产力，懒惰带来进步。</h3>
         </div>
     </div>
 

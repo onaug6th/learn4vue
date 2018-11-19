@@ -30,7 +30,7 @@ export default {
         return {
             lessionList:[
                 { title : "模板渲染", intro : "模板渲染在界面上的前世今生", done : true},
-                { title : "组件生命周期与路由", intro : "操控组件的生老病死，像提线木偶一样掌控项目"},
+                { title : "组件生命周期与路由", intro : "操控组件的生老病死", done : true},
                 { title : "高级组件", intro : "像砌积木一样的页面"}
             ]
         }
