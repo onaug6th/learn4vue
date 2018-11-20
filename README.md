@@ -1,5 +1,6 @@
 # learn 4 vue
 
+leran 4(谐音"for") vue
 带你从零入门 vue.js
 
 ### 项目启动
