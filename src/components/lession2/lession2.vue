@@ -98,7 +98,7 @@
                 <p>同理的，我们可以在<span class="h-red">路由跳转后</span>的事件中做某些事情。</p>
                 <p>例如滚动到页面顶部，或者回退到用户上次浏览的位置。</p>
                 <p>关于路由传参，与路由配置。还有其他更加深入的API。</p>
-                <p>可以查阅官方文档 <a href="https://router.vuejs.org/zh/api/"></a></p>
+                <p>可以查阅官方文档 <a href="https://router.vuejs.org/zh/api/">官方文档</a></p>
             </div>
 
         </div>
