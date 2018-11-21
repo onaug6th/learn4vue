@@ -49,11 +49,11 @@
                 <pre class="language-javascript" v-if="extendObj['whyNotOnclick']">
         <code>'&lt;div onclick="sayName(' + resultData + ')&gt;&lt;/div&gt;'</code>
                 因为拼接后的对象会变成对象字符串化后的文本。
-                <img src="./pic2.png" alt="">
+                <img src="./img/pic2.png" alt="">
                 </pre>
             </p>
             <p>如果是渲染一个表格，像图片这样的，累死人。</p>
-            <img src="./pic1.png" alt="">
+            <img src="./img/pic1.png" alt="">
         </div>
         <h4>
             所以有了 ArtTemplate，Jsp，FreeMarker 之类的模板引擎，为的就是解放生产力。
@@ -67,18 +67,18 @@
         <div class="paragraph">
             <h3>v-for</h3>
             <p>一个简单的例子</p>
-            <img src="./pic3.png" alt="">
+            <img src="./img/pic3.png" alt="">
             <hr>
-            <img src="./pic5.png" alt="">
+            <img src="./img/pic5.png" alt="">
             <hr>
-            <img src="./pic4.png" alt="">
+            <img src="./img/pic4.png" alt="">
             
             <h4>渲染后的结果</h4>
             <div class="form-group" v-for="(item ,index) in simpleListData" :key="index">
                 名称 {{ item.name }} 年龄 {{ item.age }}
             </div>
             <p>渲染非常的简单。当然，如果循环一个复杂的列表的话，HTML结构也会相对应的复杂。同时我们也能够往函数里传递<span class="h-red">Object类型</span>的参数。</p>
-            <img src="./pic6.png" alt="">
+            <img src="./img/pic6.png" alt="">
         </div>
         <div class="content"    >
             <!-- 产品列表循环 -->
@@ -135,7 +135,7 @@
                 </div>
             </div>
             <p>同时也能接收方法，在方法中返回结果。根据返回结果来执行 v-if</p>
-            <img src="./pic7.png" alt="">
+            <img src="./img/pic7.png" alt="">
             <p>第一行的时候，提到了摧毁而并非隐藏。是因为 v-if 指令会将html从DOM中完全抹掉</p>
             <p>绑定值为false时，并不会对false的区域进行渲染。在绑定的值为真时，再重新插入到DOM中。</p>
             <p>这是一种完全摧毁的操作，而有一个和 v-if 类似的指令，叫 <span class="h-red">v-show</span>。效果是一样的，而两者执行过程不一样。</p>
@@ -160,7 +160,7 @@
                     </p>
                 </strong>
             </div>
-            <img src="./pic8.png" alt="">
+            <img src="./img/pic8.png" alt="">
         </div>
         <hr>
         <div class="paragraph">
@@ -171,12 +171,12 @@
             <p>或者用户在输入文本框时，对文本框里的内容进行实时校验。</p>
             <p>在需要监听事件的标签上填写进行对应的指令，例如 v-on:click v-on:change</p>
             <p>例如：BUTTON 按钮上的 v-on:click ，INPUT 文本框上的 v-on:change </p>
-            <img src="./pic9.png" alt="">
+            <img src="./img/pic9.png" alt="">
             <p>而且，v-on:可以使用缩写 @</p>
             <p> v-on:click 等价与 @click </p>
             <p><a target="blank" href="http://www.w3school.com.cn/tags/html_ref_eventattributes.asp">事件大全</a></p>
             <p>需要执行的事件回调，需要在当前组件中的 methods 属性里声明方法。</p>
-            <img src="./pic11.png" alt="">
+            <img src="./img/pic11.png" alt="">
             <div class="form-group example">
                 <p>对按钮及文本框进行监听</p>
                 <p>
@@ -190,7 +190,7 @@
                 </p>                
             </div>
             <p>不知道有没有眼尖的人发现这个东西</p>
-            <img src="./pic10.png" alt="">
+            <img src="./img/pic10.png" alt="">
             <p>这是个啥？</p>
             <p>.enter 是vue里面的按键修饰符，在按键事件发生时，只对特定的按键回调。</p>
             <p>例如这里只对回车事件进行监听，你在键盘上敲什么我都不管，我只管监听回车事件。</p>

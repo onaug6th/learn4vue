@@ -5,7 +5,7 @@
             <h3>简单组件</h3>
             <h4 @click="toggleExtend('component')">页面上的每个元素，都可以看成一个组件<paperClip></paperClip></h4>
             <div class="extend" v-if="extendObj['component']">
-                <img src="./img1.png" alt="">
+                <img src="./img/img1.png" alt="">
                 <p>
                     其实认真一看，会发现整个vue项目，每个页面的业务代码都是组件为单位的。
                 </p>
@@ -33,19 +33,19 @@
             </p>
             <tableEasy></tableEasy>
             <p>仅仅是使用了一个自定义标签，就导入了整个模板。</p>
-            <img src="./img2.png" alt="">
+            <img src="./img/img2.png" alt="">
 
         </div>
         <div class="paragraph">
             <h3>使用一个组件</h3>
             <h4>1. 寻找需要使用的组件</h4>
             <p>在script块中，使用es6 module的 import方法，导入目标组件到当前组件中。</p>
-            <img src="./img3.png" alt="">
+            <img src="./img/img3.png" alt="">
             <h4>2. 命名</h4>
             <p>在当前组件的components属性中，声明组件在模板中的名称。</p>
-            <img src="./img4.png" alt="">
+            <img src="./img/img4.png" alt="">
             <h4>3. 使用components中声明的属性，在模板中写自定义标签。</h4>
-            <img src="./img5.png" alt="">
+            <img src="./img/img5.png" alt="">
         </div>
     </div>
 
