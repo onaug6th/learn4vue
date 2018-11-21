@@ -22,13 +22,13 @@
             <p>在a标签中填入页面路径，或者完整的地址</p>
             <p>之后会往服务端发起真实的请求。获取指定路径页面信息</p>
             <p>但单页应用不是在a标签里填入完整的路径进行跳转。</p>
-            <p>因为单页应用的页面跳转，实际上并没有往后端发起请求。而是在前端切换显示不同页面的js</p>
+            <p>因为单页应用的页面跳转，实际上并没有往后端发起请求。而是在前端切换js显示不同页面</p>
             <div class="paragraph">
                 <p>跳转路由有两种方法，一种是用特定的路由标签，填入链接进行跳转。</p>
                 <p @click="toggleExtend('whatIsVueRouter')">需要使用vue router中特定的标签，进行路由切换。<paperClip></paperClip></p>
                 <div class="extend" v-if="extendObj['whatIsVueRouter']">
                     <p>
-                        vue-router 是vue.js 中的一个前端路由库。在构建一个vue 项目时，他并不是必选的。
+                        vue-router 是vue.js 中的一个前端路由库。在构建一个vue 应用时，他并不是必选的。
                     </p>
                     <p>
                         就像官网提到的，vue是一个渐进式框架，所有的第三方库和功能，在一开始构建时并不会全部装上。而是看开发者自身需求按需引入。
@@ -111,7 +111,7 @@
 export default {
     name: 'lession2',
     components: {
-    
+        
     },
     updated(){
         this.highlightAll();

@@ -22,6 +22,12 @@ const routes = [
         name: "lession2",
         component: () => import("./components/lession2/lession2.vue")
     },
+    //  课程三
+    {
+        path: "/lession3",
+        name: "lession3",
+        component: () => import("./components/lession3/lession3.vue")
+    },
     //  关于
     {
         path: "/about",

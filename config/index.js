@@ -49,20 +49,17 @@ module.exports = {
   },
   //  构建生产时的配置
   build: {
-    // Template for index.html
+    //  打包后的页面入口html
     index: path.resolve(__dirname, '../dist/index.html'),
 
     //  静态资源根路径
     assetsRoot: path.resolve(__dirname, '../dist'),
-    //  静态资源目录
+    //  静态资源目录名称
     assetsSubDirectory: 'static',
-    //  基于index.html的哪一级开启读取静态资源文件。
+    //  基于index.html的哪一级开始读取静态资源文件。
     assetsPublicPath: '/',
 
-    /**
-     * Source Maps
-     */
-
+    //  生产资源遍历
     productionSourceMap: true,
     // https://webpack.js.org/configuration/devtool/#production
     devtool: '#source-map',
