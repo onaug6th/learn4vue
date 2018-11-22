@@ -8,7 +8,7 @@ const routes = [
     {
         path: "/",
         name: "home",
-        component: () => import("./views/Home.vue")
+        component: () => import("./views/home/home.vue")
     },
     //  课程一
     {
@@ -32,13 +32,43 @@ const routes = [
     {
         path: "/about",
         name: "about",
-        component: () => import("./views/About.vue"),
-        meta: {
-            showNav: true
-        }
+        component: () => import("./views/about/about.vue")
     }
 ];
 
-export default new Router({
+//  实例化后的router
+const router = new Router({
     routes
-})
+});
+
+//	监听路由改变前事件
+router.beforeEach((to, from, next) => {
+	
+	//  如果该路由设置了校验，检查是否登录
+	if (to.meta.shouldAdmin) {
+		
+		//	如果存在登录标记，允许进入该路由
+		if (localStorage.getItem("isLogin")) {
+			next();
+		}
+		//	否则跳转回首页，或者去提示页（看业务需求）
+		else {
+			next({
+				path: '/'
+			});
+		}
+	}
+	//	否则默认放行
+	else {
+		next();
+	}
+
+});
+
+//	监听路由改变后事件
+router.afterEach((to, from) => {
+	//	页面回到顶部
+	document.documentElement.scrollTop = 0;
+});
+
+export default router;
