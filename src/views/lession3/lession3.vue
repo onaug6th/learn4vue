@@ -149,11 +149,50 @@
             </p>
             <img src="./img/img12.png">
             <todoListV2 v-bind:listData="todoListData" v-on:done="todoListDone"></todoListV2>
-            <p>父组件在接收到事件时，会执行对应的回调。子组件发布事件时，也能传递不同的参数给到父组件的回调，来做其他逻辑处理。</p>
+            <p>
+                父组件在接收到事件时，会执行对应的回调。子组件发布事件时，也能传递不同的参数给到父组件的回调，来做其他逻辑处理。
+            </p>
+        </div>
+        <hr>
+        <div class="paragraph">
+            <h3>兄弟组件通讯</h3>
+            <h4>怎么这么多兄弟姐妹</h4>
+            <p>
+                最后一种通讯了，因为只有三种情况，父对子，子对父，兄弟对兄弟
+            </p>
+            <p>
+                兄弟组件通讯，需要为当前vue项目的根实例增加一个发布订阅中心。
+            </p>
+            <p>
+                Vue本身就实现了发布<span class="h-red">（$emit）</span>，订阅<span class="h-red">（$on）</span>等api，但是只能用于父子组件通讯。
+            </p>
+            <p>
+                只能要建立一个新的实例。作为单独的发布订阅中心，用于兄弟组件通讯。<paperClip></paperClip>
+            </p>
+            <pre>new Vue();</pre>
+            <p>
+                将这个新建的实例对象，挂载到根实例的原型链，或者设置到根实例的data属性。
+            </p>
+            <h4>1. 挂载到原型链</h4>
+            <img src="./img/img13.png">
+            <p>挂载到原型链后，在组件中通过 this.eventHub.$on，this.eventHub.$emit来进行事件发布订阅。</p>
+            <h4>2. 挂载到根实例的data属性</h4>
+            <img src="./img/img14.png">
+            <p>挂载到实例属性后，在组件中通过 this.$root.eventHub.$on，this.$root.eventHub.$emit来进行事件发布订阅。</p>
         </div>
         <hr>
         <div class="paragraph">
             <h3>简单总结组件通讯</h3>
+            <h4>父传子</h4>
+            <p>就像给闹脾气的小孩喂饭一样。</p>
+            <p>只要小孩<span class="h-red">（子组件）</span>可以吃饭<span class="h-red">（props 中声明了对应的值）</span></p>
+            <p>硬生生塞东西进去，不管是饭还是药，小孩必须要吃。</p>
+            <p class="form-group">这个通讯都会成功。</p>
+            <h4>子传父</h4>
+            <p>就像闹脾气的小孩叫父母一样。</p>
+            <p>如果父母<span class="h-red">（父组件）</span>不理他<span class="h-red">（不指定回调）</span></p>
+            <p>不管小孩<span class="h-red">（子组件）</span>怎么叫<span class="h-red">（发布事件）</span></p>
+            <p>这个通讯都不会成功。</p>
         </div>
     </div>
 
