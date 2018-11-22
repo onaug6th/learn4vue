@@ -14,19 +14,19 @@ const routes = [
     {
         path: "/lession1",
         name: "lession1",
-        component: () => import("./components/lession1/lession1.vue")
+        component: () => import("./views/lession1/lession1.vue")
     },
     //  课程二
     {
         path: "/lession2",
         name: "lession2",
-        component: () => import("./components/lession2/lession2.vue")
+        component: () => import("./views/lession2/lession2.vue")
     },
     //  课程三
     {
         path: "/lession3",
         name: "lession3",
-        component: () => import("./components/lession3/lession3.vue")
+        component: () => import("./views/lession3/lession3.vue")
     },
     //  关于
     {

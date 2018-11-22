@@ -290,6 +290,7 @@
 </template>
 
 <script>
+// mock列表数据
 import mockListData from "./productList.json";
 
 export default {

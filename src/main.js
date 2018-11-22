@@ -50,7 +50,7 @@ router.afterEach((to, from) => {
 });
 
 //	注册全局组件，回形针
-Vue.component('paperClip', () => import("./components/common-component/paperClip.vue"));
+Vue.component('paperClip', () => import("./components/paperClip.vue"));
 
 new Vue({
 	el: '#app',
