@@ -49,11 +49,11 @@
                 <pre class="language-javascript" v-if="extendObj['whyNotOnclick']">
         <code>'&lt;div onclick="sayName(' + resultData + ')&gt;&lt;/div&gt;'</code>
                 因为拼接后的对象会变成对象字符串化后的文本。
-                <img src="./img/pic2.png" alt="">
+                <img src="./img/pic2.png">
                 </pre>
             </p>
             <p>如果是渲染一个表格，像图片这样的，累死人。</p>
-            <img src="./img/pic1.png" alt="">
+            <img src="./img/pic1.png">
         </div>
         <h4>
             所以有了 ArtTemplate，Jsp，FreeMarker 之类的模板引擎，为的就是解放生产力。
@@ -67,18 +67,18 @@
         <div class="paragraph">
             <h3>v-for</h3>
             <p>一个简单的例子</p>
-            <img src="./img/pic3.png" alt="">
+            <img src="./img/pic3.png">
             <hr>
-            <img src="./img/pic5.png" alt="">
+            <img src="./img/pic5.png">
             <hr>
-            <img src="./img/pic4.png" alt="">
+            <img src="./img/pic4.png">
             
             <h4>渲染后的结果</h4>
             <div class="form-group" v-for="(item ,index) in simpleListData" :key="index">
                 名称 {{ item.name }} 年龄 {{ item.age }}
             </div>
             <p>渲染非常的简单。当然，如果循环一个复杂的列表的话，HTML结构也会相对应的复杂。同时我们也能够往函数里传递<span class="h-red">Object类型</span>的参数。</p>
-            <img src="./img/pic6.png" alt="">
+            <img src="./img/pic6.png">
         </div>
         <div class="content"    >
             <!-- 产品列表循环 -->
@@ -135,7 +135,7 @@
                 </div>
             </div>
             <p>同时也能接收方法，在方法中返回结果。根据返回结果来执行 v-if</p>
-            <img src="./img/pic7.png" alt="">
+            <img src="./img/pic7.png">
             <p>第一行的时候，提到了摧毁而并非隐藏。是因为 v-if 指令会将html从DOM中完全抹掉</p>
             <p>绑定值为false时，并不会对false的区域进行渲染。在绑定的值为真时，再重新插入到DOM中。</p>
             <p>这是一种完全摧毁的操作，而有一个和 v-if 类似的指令，叫 <span class="h-red">v-show</span>。效果是一样的，而两者执行过程不一样。</p>
@@ -160,7 +160,7 @@
                     </p>
                 </strong>
             </div>
-            <img src="./img/pic8.png" alt="">
+            <img src="./img/pic8.png">
         </div>
         <hr>
         <div class="paragraph">
@@ -171,12 +171,12 @@
             <p>或者用户在输入文本框时，对文本框里的内容进行实时校验。</p>
             <p>在需要监听事件的标签上填写进行对应的指令，例如 v-on:click v-on:change</p>
             <p>例如：BUTTON 按钮上的 v-on:click ，INPUT 文本框上的 v-on:change </p>
-            <img src="./img/pic9.png" alt="">
+            <img src="./img/pic9.png">
             <p>而且，v-on:可以使用缩写 @</p>
             <p> v-on:click 等价与 @click </p>
             <p><a target="blank" href="http://www.w3school.com.cn/tags/html_ref_eventattributes.asp">事件大全</a></p>
             <p>需要执行的事件回调，需要在当前组件中的 methods 属性里声明方法。</p>
-            <img src="./img/pic11.png" alt="">
+            <img src="./img/pic11.png">
             <div class="form-group example">
                 <p>对按钮及文本框进行监听</p>
                 <p>
@@ -190,11 +190,29 @@
                 </p>                
             </div>
             <p>不知道有没有眼尖的人发现这个东西</p>
-            <img src="./img/pic10.png" alt="">
+            <img src="./img/pic10.png">
             <p>这是个啥？</p>
             <p>.enter 是vue里面的按键修饰符，在按键事件发生时，只对特定的按键回调。</p>
             <p>例如这里只对回车事件进行监听，你在键盘上敲什么我都不管，我只管监听回车事件。</p>
             <p><a target="blank" href="https://cn.vuejs.org/v2/guide/events.html#%E6%8C%89%E9%94%AE%E4%BF%AE%E9%A5%B0%E7%AC%A6">按键修饰符</a></p>
+        </div>
+        <hr>
+        <div class="paragraph">
+            <h3>v-bind</h3>
+            <h4>动态修改标签属性</h4>
+            <p>使用 <span class="h-red">v-bind</span>对标签属性进行修改，结果为等号中的表达式的值。</p>
+            <p>例如，点击获取验证码后，获取验证码的按钮需要倒计时且为禁用状态</p>
+            <div class="example">
+                <p>
+                    <button class="btn btn-primary" @click="getSmsCode()" :disabled="countDown !== 0">{{ countDown || '获取验证码' }}</button>
+                </p>
+            </div>
+            <p>给按钮使用 v-bind:disabled ，当countDown为真时，按钮为禁用状态。</p>
+            <img src="./img/pic12.png">
+            <p>而且，v-bind:可以使用缩写 :</p>
+            <p> v-bind:name 等价与 :name </p>
+            <p>同样的，除了disabled，也能动态绑定其他属性。例如input文本框的name，class，value。</p>
+            <p>一般常见于列表循环时，需要给不同的input属性加上序号。以区分先后。</p>
         </div>
         <hr>
         <div class="paragraph">
@@ -325,7 +343,11 @@ export default {
             //  表单数据
             formData : {
                 goods:[]
-            }
+            },
+            //  倒计时的时间
+            countDown : 0,
+            //  倒计时定时器，用于摧毁
+            interval: {}
         }
     },
     computed:{
@@ -378,6 +400,18 @@ export default {
         //  文本改变事件
         textChange(){
             this.changeCount++;
+        },
+
+        //  验证码倒计时
+        getSmsCode(){
+            this.countDown = 5;
+            this.interval = setInterval(()=>{
+                if(this.countDown == 0){
+                    clearInterval(this.interval);
+                }else{
+                    this.countDown--;
+                }
+            }, 1000);
         },
 
         //  保存表单数据

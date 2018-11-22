@@ -2,10 +2,10 @@
     
     <div class="container">
         <div class="paragraph">
-            <h3>简单组件</h3>
+            <h3>组件</h3>
             <h4 @click="toggleExtend('component')">页面上的每个元素，都可以看成一个组件<paperClip></paperClip></h4>
             <div class="extend" v-if="extendObj['component']">
-                <img src="./img/img1.png" alt="">
+                <img src="./img/img1.png">
                 <p>
                     其实认真一看，会发现整个vue项目，每个页面的业务代码都是组件为单位的。
                 </p>
@@ -20,32 +20,140 @@
         </div>
         <div class="paragraph">
             <p>
-                组件是可复用的vue实例
-            </p>
-            <p>
                 在开发项目时，经常会遇到一些重复的功能。
             </p>
             <p>
-                例如千篇一律的表单，表格列表。提示弹层，省市县选择器。甚至细粒度更低的一个小回形针<paperClip></paperClip>都能是一个组件。
+                例如千篇一律的表单，除了列字段不同的表格列表。提示弹层，省市县选择器。甚至细粒度更低的一个小回形针<paperClip></paperClip>都能是一个组件。
             </p>
             <p>
-                就像下面这个子组件表格。
+                就像下面这个待办列表。
             </p>
-            <tableEasy></tableEasy>
-            <p>仅仅是使用了一个自定义标签，就导入了整个模板。</p>
-            <img src="./img/img2.png" alt="">
-
+            <todoList></todoList>
+            <p>
+                在当前页面中，仅仅是使用了一个自定义标签，就导入了整个列表。
+            </p>
+            <img src="./img/img2.png">
         </div>
+        <hr>
         <div class="paragraph">
-            <h3>使用一个组件</h3>
-            <h4>1. 寻找需要使用的组件</h4>
-            <p>在script块中，使用es6 module的 import方法，导入目标组件到当前组件中。</p>
-            <img src="./img/img3.png" alt="">
+            <h3>组件是可复用的vue实例</h3>
+            <p>
+                组件拥有vue实例的所有属性，方法。和一般页面组件没有什么不同。
+            </p>
+            <p>
+                被称为子组件，只是因为被其他页面组件引用了。建立了父子关系。
+            </p>
+            <p>
+                而且作为子组件时，子组件可以显式的声明需要从父组件接收的值。用于子组件内部进行某些操作。
+            </p>
+        </div>
+        <hr>
+        <div class="paragraph">
+            <h3>引入一个组件</h3>
+            <h4>1. 寻找需要引入的组件</h4>
+            <p>
+                在script块中，使用es6 module的 import方法，导入目标组件到当前组件中。
+            </p>
+            <img src="./img/img3.png">
             <h4>2. 命名</h4>
-            <p>在当前组件的components属性中，声明组件在模板中的名称。</p>
-            <img src="./img/img4.png" alt="">
-            <h4>3. 使用components中声明的属性，在模板中写自定义标签。</h4>
-            <img src="./img/img5.png" alt="">
+            <p>
+                在当前组件的 components 属性中，声明组件在模板中的名称。
+            </p>
+            <img src="./img/img4.png">
+            <h4>3. 摆放</h4>
+            <p>
+                在模板中填写自定义标签，标签名为 components中声明的属性名。
+            </p>
+            <img src="./img/img5.png">
+            <p>
+                我们在 lession3 中引入了一个表格组件，我们命名为 todoList
+            </p>
+            <p>
+                此时，lession3 组件，和 todoList 组件，便是父子组件关系。
+            </p>
+            <p>
+                目前 todoList 组件的中内容是写死的，我们要让列表中的内容动态生成，数据从父组件中传入。
+            </p>
+            <p>
+                这时需要改造 todoList 组件，让他能够让父组件向子组件传值。
+            </p>
+        </div>
+        <hr>
+        <div class="paragraph">
+            <h3>父组件向子组件传值</h3>
+            <p>
+                这边新建 todoList 的拷贝 todoListV1。以 todoListV1 为例进行修改，允许他从父组件接受名为 listData 的值。
+            </p>
+            <p>
+                在子组件中，需要预先声明一个 props 属性
+            </p>
+            <img src="./img/img6.png">
+            <p>
+                该属性表明，子组件可从父组件中接受的值。
+            </p>
+            <p>
+                该属性可以是一个数组，也可以是一个对象。拥有两种用法。这边先提到最常用的第一种，数组的形式。
+            </p>
+            <p>
+                <a target="_blank" href="https://cn.vuejs.org/v2/guide/components-props.html#ad">子组件属性——props</a>
+            </p>
+            <p>
+                修改 todoListV1 组件，使用 v-for 循环从父组件传入的数据。
+            </p>            
+            <img src="./img/img7.png">
+            <p>
+                在 lession3 组件中，在使用子组件标签的地方，使用 v-bind方法。传入列表数据。
+            </p>
+            <img src="./img/img8.png">
+            <p>
+                同时，别忘了在 lession3 组件的data属性中，声明给子组件使用的数据。
+            </p>
+            <img src="./img/img9.png">
+            <p>
+                这次 todoList 的列表数据，就是由父组件来决定了。
+            </p>
+            <todoListV1 v-bind:listData="todoListData"></todoListV1>
+            <p>
+                这就是父组件往子组件传值的过程，通过给子组件标签绑定属性传递数据。
+            </p>
+        </div>
+        <hr>
+        <div class="paragraph">
+            <h3>子组件往父组件传值</h3>
+            <p>
+                除了父组件往子组件传值，子组件也可以往父组件传值。
+            </p>
+            <p>
+                现在要求点击子组件 todoListV1 的完成按钮时，lession3 父组件收到通知，将待办列表清空。
+            </p>
+            <p>
+                vue 提供了一个发布订阅事件系统，在子组件中发布事件，父组件中监听事件并执行回调，即可完成父子组件通讯。
+            </p>
+            <p>
+                基于 todoListV1 再copy一份 todoListV2。以 todoListV2 为例进行修改。
+            </p>
+            <p>
+                我们在 todoListV2 的按钮中，监听点击事件，并在点击时使用 $emit 方法往上发布事件。
+            </p>
+            <pre>this.$emit(方法名, [传递的参数]);</pre>
+            <p>
+                <a href="https://cn.vuejs.org/v2/api/#vm-emit">文档—vue.js emit</a>
+            </p>
+            <img src="./img/img10.png">
+            <p>
+                在 lession3 中，在使用子组件标签的地方，使用 v-on 方法，监听事件并且指定回调。
+            </p>
+            <img src="./img/img11.png">
+            <p>
+                同时，别忘了在 lession3 组件的methods属性中，声明对应的事件回调。
+            </p>
+            <img src="./img/img12.png">
+            <todoListV2 v-bind:listData="todoListData" v-on:done="todoListDone"></todoListV2>
+            <p>父组件在接收到事件时，会执行对应的回调。子组件发布事件时，也能传递不同的参数给到父组件的回调，来做其他逻辑处理。</p>
+        </div>
+        <hr>
+        <div class="paragraph">
+            <h3>简单总结组件通讯</h3>
         </div>
     </div>
 
@@ -53,30 +161,61 @@
 
 <script>
 
-// 引入表格组件
-import tableEasy from "./table-easy.vue";
+// 引入列表组件
+import todoList from "./todoList.vue";
+
+// 引入列表组件，父传子 v 1.0
+import todoListV1 from "./todoListV1.vue";
+
+// 引入列表组件，父子互传 v 2.0
+import todoListV2 from "./todoListV2.vue";
 
 export default {
+
+    //  实例属性——组件名称
     name: 'lession3',
-    //  当前vue实例对象的components组件属性
-    components: {
-        tableEasy : tableEasy
-    },
-    updated(){
-        this.highlightAll();
-    },
-    mounted(){
-        this.highlightAll();
-    },
+
+    //  实例属性——当前实例内部数据
     data(){
         return {
             //  扩展内容
-            extendObj : {}
+            extendObj : {},
+
+            //  用于 todoList 组件的数据
+            todoListData : [
+                `1. 闹钟没响`,
+                `2. 要迟到了`,
+                `3. 赶地铁`,
+                `4. 等排队`,
+                `5. 刚刚好打到卡`
+            ]
         }
     },
+
+    //  实例属性——当前vue实例对象的子组件集合
+    components: {
+        todoList : todoList,
+        todoListV1 : todoListV1,
+        todoListV2 : todoListV2
+    },
+
+    //  实例属性——计算属性
     computed:{
     },
+
+    //  生命周期钩子——更新后
+    updated(){
+        this.highlightAll();
+    },
+
+    //  生命周期钩子——挂载后
+    mounted(){
+        this.highlightAll();
+    },
+
+    //  实例属性——当前实例内部方法
     methods : {
+
         highlightAll(){
             //  代码高亮
             this.$nextTick(()=>{
@@ -97,21 +236,16 @@ export default {
         },
 
         /**
-         * 前往页面
-         * @param {string} path 路径
+         * 待办列表结束回调事件
+         * @param {Array} args 子组件传递的所有参数
          */
-        goPage(path){
-
-            //  跳转产品信息页，并且传递对应的产品Id
-            this.$router.push({
-                path : "/productInfo",
-                query : {
-                    id : "9527"
-                }
-            });
-
+        todoListDone(args){
+            //  清空待办列表
+            this.todoListData = [];
         }
+
     }
+
 }
 </script>
 

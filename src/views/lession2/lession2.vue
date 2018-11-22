@@ -34,7 +34,7 @@
                         就像官网提到的，vue是一个渐进式框架，所有的第三方库和功能，在一开始构建时并不会全部装上。而是看开发者自身需求按需引入。
                     </p>
                 </div>
-                <img src="./img/img2.png" alt="">
+                <img src="./img/img2.png">
                 <p class="example">
                     <router-link to="/">跳转去首页</router-link>
                     <router-link to="/lession1">跳转去目录一</router-link>
@@ -42,7 +42,7 @@
             </div>
             <div class="paragraph">
                 <h4>另外一种是编程式的跳转，即在代码中做控制。</h4>
-                <img src="./img/img4.png" alt="">
+                <img src="./img/img4.png">
                 <p class="example">
                     <button class="btn btn-primary" @click="goPage('/')">跳转首页</button>
                     <button class="btn btn-success" @click="goPage('/lession1')">跳转目录一</button>
@@ -65,7 +65,7 @@
             <div class="paragraph">
                 <p>路由的配置是由多个对象组成的数组</p>
                 <p>以本项目为例，我们项目的路由非常简单，全都是一级路由，因为没有内部模块。</p>
-                <img src="./img/img5.png" alt="">
+                <img src="./img/img5.png">
                 <p>每个对象都是一个路由配置。</p>
                 <p>路由名称，路由路径，路由映射的组件，路由元数据，子路由。</p>
                 <p @click="toggleExtend('routerGuard')">元数据用于路由守卫，分辨该路由是否需要特殊权限才能访问。<paperClip></paperClip></p>
@@ -75,11 +75,11 @@
                     </p>
                 </div>
                 <p>下面是一个分了二级模块的路由，管理员模块下拥有两个子路由。</p>
-                <img src="./img/img6.png" alt="">
+                <img src="./img/img6.png">
                 <p>访问路由时，必须访问完整路径，才能访问到指定的子路由。</p>
                 <pre class="language-javascript"><code>localhost:8080/#/admin/user</code></pre>
                 <p>在切换路由时，如果需要传递参数。只用在调用路由跳转方法里填写参数属性</p>
-                <img src="./img/img7.png" alt="">
+                <img src="./img/img7.png">
                 <p>此时浏览器跳转，就会携带一串query在地址后。</p>
                 <pre class="language-javascript"><code>localhost:8080/#/productInfo?id=9527</code></pre>
                 <p>在productInfo这个组件中，应该会有对应的逻辑。“获取url中携带的id，发起查询，页面展示产品信息”</p>
@@ -91,9 +91,9 @@
                 <p>项目如果有做权限管理，会对实例化后的router实例对象，进行回调配置</p>
                 <p><a href="https://router.vuejs.org/zh/api/#router-beforeeach" target="blank">路由事件API</a></p>
                 <p>假设我们有个管理员界面，必须登陆后才能访问。</p>
-                <img src="./img/img9.png" alt="">
+                <img src="./img/img9.png">
                 <p>我们可以在<span class="h-red">路由跳转前</span>事件回调中判断，该路由是否配置了mate元数据。和是否存在需要登录的字段</p>
-                <img src="./img/img8.png" alt="">
+                <img src="./img/img8.png">
                 <p>一旦发现符合要求的路由，就进行登录校验。未登录会拒绝访问该组件，被请回其他界面。</p>
                 <p>同理的，我们可以在<span class="h-red">路由跳转后</span>的事件中做某些事情。</p>
                 <p>例如滚动到页面顶部，或者回退到用户上次浏览的位置。</p>
