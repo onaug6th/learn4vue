@@ -13,7 +13,7 @@ const axios = Axios.create(requestConfig);
 
 /**
  * 请求拦截器
- * 在发起请求前，我们会检查vuex，或者本地储存中是否存在token，userid等需要默认传递给后端的数据，如果存在的话。每次请求都会携带过去。
+ * 在发起请求前，我们会检查vuex，或者本地储存中是否存在token，userid等需要默认放在请求头传递给后端的数据，如果存在的话。每次请求都带过去。
  * 
  * tip:
  * 1. 如果需要修改baseURL 只需要在调用方法的地方，传递配置 { baseURL : "https://www.other.com" }即可覆盖原有配置。

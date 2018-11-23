@@ -34,6 +34,7 @@ export default {
 
         //  已经完成
         done(){
+            //  发布事件，事件名称为 “done”，传递参数为 “是的，已经完成了”
             this.$emit("done", "是的，已经完成了");
         }
     }

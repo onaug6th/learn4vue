@@ -41,7 +41,12 @@ const router = new Router({
     routes
 });
 
-//	监听路由改变前事件
+/**
+ * 监听路由改变前事件
+ * @param {object} to 前往的路由信息
+ * @param {object} from 来自的路由信息
+ * @param {Function} next 释放路由
+ */
 router.beforeEach((to, from, next) => {
 	
 	//  如果该路由设置了校验，检查是否登录
