@@ -41,7 +41,7 @@
             <p>没有优点，缺点很多</p>
             <p>1. 代码难管理，大量的html标签充斥在js代码中</p>
             <p>2. 字符串拼接非常操蛋，单双引号要一致，而且部分数据还需要转义，非空判断</p>
-            <p @click="toggleExtend('onclick')">3. 只能在模板渲染结束后给指定的元素添加鼠标事件，或者内联写上 onclick 等属性<paperClip></paperClip></p>
+            <p @click="toggleExtend('onclick')">3. 只能在模板渲染结束后给指定的元素添加鼠标事件，或者内联写上 <code>onclick</code> 等属性<paperClip></paperClip></p>
 
             <p class="extend" v-if="extendObj['onclick']">
                 onclick中的属性会从全局寻找这个变量，全局属性是非常危险的。因为可能多个地方声明了同名属性，而且在字符串拼接中，如果需要往onclick方法中传递一个对象，是不能实现的。
@@ -61,7 +61,7 @@
         <p>同时，你也可以把vue的template当作是一个模板引擎。</p>
         <div class="paragraph">
             <p>现在，我们可以用更加方便的方法来渲染我们的页面。</p>
-            <p>使用vue.js 的 <span class="h-red">v-for</span> 来进行一系列复杂模板渲染</p>
+            <p>使用vue.js 的 <code>>v-for</code> 来进行一系列复杂模板渲染</p>
         </div>
         <hr>
         <div class="paragraph">
@@ -77,10 +77,10 @@
             <div class="form-group" v-for="(item ,index) in simpleListData" :key="index">
                 名称 {{ item.name }} 年龄 {{ item.age }}
             </div>
-            <p>渲染非常的简单。当然，如果循环一个复杂的列表的话，HTML结构也会相对应的复杂。同时我们也能够往函数里传递<span class="h-red">Object类型</span>的参数。</p>
+            <p>渲染非常的简单。当然，如果循环一个复杂的列表的话，HTML结构也会相对应的复杂。同时我们也能够往函数里传递<code>Object</code>类型的参数。</p>
             <img src="./img/pic6.png">
         </div>
-        <div class="content"    >
+        <div class="content">
             <!-- 产品列表循环 -->
             <ul class="product-list">
                 <li class="product" v-for="(item, index) in productListData" :key="index" :data-index="index">
@@ -116,7 +116,7 @@
             <!-- 产品列表循环 -->
         </div>
         <div class="paragraph">
-            <p>不止循环表格列表，通常一些下拉框的值是需要动态从后端获取的。这时像 select 这类标签的内容，也可以通过v-for循环出来。</p>
+            <p>不止循环表格列表，通常一些下拉框的值是需要动态从后端获取的。这时像 <code>select</code> 这类标签的内容，也可以通过v-for循环出来。</p>
             <p>前端做了很多view相关的库，本质上就是为了屏蔽DOM的API。减少DOM操作。</p>
             <p>提高生产力，分离html与JavaScript，操作DOM的麻烦。</p>
             <p>同理的，除了循环渲染。vue.js 也提供了其他方法来方便我们渲染或操作界面。</p>
@@ -125,7 +125,7 @@
         <div class="paragraph">
             <h3>v-if</h3>
             <p>摧毁或渲染内容</p>
-            <p>在需要控制的html标签上设置 <span class="h-red">v-if</span>属性</p>
+            <p>在需要控制的html标签上设置 <code>v-if</code>属性</p>
             <p>v-if 可以接收任何值，甚至是表达式。</p>
             <p>最简单的用法，就是给v-if绑定一个布尔值，通过改变model中的值。来切换展示</p>
             <div class="form-group example">
@@ -138,11 +138,11 @@
             <img src="./img/pic7.png">
             <p>第一行的时候，提到了摧毁而并非隐藏。是因为 v-if 指令会将html从DOM中完全抹掉</p>
             <p>绑定值为false时，并不会对false的区域进行渲染。在绑定的值为真时，再重新插入到DOM中。</p>
-            <p>这是一种完全摧毁的操作，而有一个和 v-if 类似的指令，叫 <span class="h-red">v-show</span>。效果是一样的，而两者执行过程不一样。</p>
+            <p>这是一种完全摧毁的操作，而有一个和 v-if 类似的指令，叫 <code>v-show</code>。效果是一样的，而两者执行过程不一样。</p>
             <p>v-if 会重新生成DOM，并且插入到原来的位置。而 v-show，仅仅是修改了html标签的显示隐藏属性。</p>
             <p>在大列表中，如果判断块中包含的数据量大。那么v-if 的性能要比v-show 快很多。</p>
             <p>显示切换完全交给了Vue.js来处理，如果自行操作DOM的话，我们需要使用选择器对标签进行样式修改。例如display : none</p>
-            <p>而且，<span class="h-red">v-if</span> 可以使用组合技能进行COMBO。当一个模板有多种情况需要展示不同数据时。</p>
+            <p>而且，<code>v-if</code> 可以使用组合技能进行COMBO。当一个模板有多种情况需要展示不同数据时。</p>
             <div class="form-group example">
                 <p>
                     <button class="btn btn-primary" @click="toggleGift()">换礼物</button>
@@ -166,7 +166,7 @@
         <div class="paragraph">
             <h3>v-on</h3>
             <h4>对DOM事件进行监听处理</h4>
-            <p>使用 <span class="h-red">v-on</span>对界面的标签进行监听，并执行回调。</p>
+            <p>使用 <code>v-on</code>对界面的标签进行监听，并执行回调。</p>
             <p>很常见的，监听按钮点击事件出现登陆窗口，点击关闭按钮关闭登陆窗口。</p>
             <p>或者用户在输入文本框时，对文本框里的内容进行实时校验。</p>
             <p>在需要监听事件的标签上填写进行对应的指令，例如 v-on:click v-on:change</p>
@@ -200,7 +200,7 @@
         <div class="paragraph">
             <h3>v-bind</h3>
             <h4>动态修改标签属性</h4>
-            <p>使用 <span class="h-red">v-bind</span>对标签属性进行修改，结果为等号中的表达式的值。</p>
+            <p>使用 <code>v-bind</code>对标签属性进行修改，结果为等号中的表达式的值。</p>
             <p>例如，点击获取验证码后，获取验证码的按钮需要倒计时且为禁用状态</p>
             <div class="example">
                 <p>
@@ -219,7 +219,7 @@
             <h3> v-model </h3>
             <h4> 直观的感受数据双向数据绑定 </h4>
             <p>
-                <span class="h-red">v-model</span>数据层推动视图层，视图层再次推动数据层。是MVVM框架最大的卖点。
+                <code>v-model</code>数据层推动视图层，视图层再次推动数据层。是MVVM框架最大的卖点。
             </p>
             <p>假设这样的场景，一个后台管理系统。需要录入用户信息</p>
             <p>其中用户的信息字段，多达几十条。</p>

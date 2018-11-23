@@ -2,7 +2,6 @@
 
     <div class="container">
         <div class="lession-list">
-            <!-- 课程循环 -->
             <h4 v-for="(lession, index) in lessionList" :key="index" @click="goLession(lession, index + 1)">
                 <p>
                     <span>{{ index + 1 }}.</span>
@@ -17,9 +16,7 @@
                     </template>
                 </p>
             </h4>
-            <!-- 课程循环 -->
         </div>
-        
     </div>
 
 </template>
@@ -36,9 +33,10 @@ export default {
             lessionList:[
                 { title : "模板渲染", intro : "模板渲染在界面上的前世今生", done : true},
                 { title : "组件生命周期与路由", intro : "操控组件的生老病死", done : true},
-                { title : "高级组件", intro : "像砌积木一样的页面", done : false},
-                { title : "Hello world", intro : "做个项目"},
-                { title : "深入组件", intro : "是时候表演真正的技术了"}
+                { title : "组件", intro : "像砌积木一样的页面", done : true},
+                { title : "依赖", intro : "项目的装备"},
+                { title : "Hello world", intro : "实践才是真理"},
+                { title : "高级组件", intro : "是时候表演真正的技术了"}
             ]
         }
     },
@@ -65,6 +63,7 @@ export default {
     }
 }
 </script>
+
 <style lang="scss" scoped>
     
     .lession-list{

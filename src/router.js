@@ -28,6 +28,18 @@ const routes = [
         name: "lession3",
         component: () => import("./views/lession3/lession3.vue")
     },
+    //  课程四
+    {
+        path: "/lession4",
+        name: "lession4",
+        component: () => import("./views/lession4/lession4.vue")
+    },
+    //  课程五
+    {
+        path: "/lession5",
+        name: "lession5",
+        component: () => import("./views/lession5/lession5.vue")
+    },
     //  关于
     {
         path: "/about",
