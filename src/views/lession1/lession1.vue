@@ -404,7 +404,11 @@ export default {
 
         //  验证码倒计时
         getSmsCode(){
+            
             this.countDown = 5;
+
+            clearInterval(this.interval);
+
             this.interval = setInterval(()=>{
                 if(this.countDown == 0){
                     clearInterval(this.interval);
@@ -412,6 +416,7 @@ export default {
                     this.countDown--;
                 }
             }, 1000);
+            
         },
 
         //  保存表单数据
