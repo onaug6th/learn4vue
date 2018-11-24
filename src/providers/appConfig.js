@@ -1,7 +1,7 @@
 import {setAttrToVue} from "./common";
 
 const appConfig = {
-    serverUrl: "http://localhost:3000/api/"
+    serverUrl: "http://www.onaug6th.com/api/"
 }
 
 setAttrToVue(appConfig);

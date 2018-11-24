@@ -3,7 +3,11 @@ import Axios from 'axios';
 //  项目配置
 import appConfig from './appConfig';
 
-//  默认请求配置
+/**
+ * 默认请求配置
+ * 更多配置请查阅中文文档
+ * https://www.cnblogs.com/whkl-m/p/6617540.html
+ */
 const requestConfig = {
     baseURL: appConfig.serverUrl
 };
@@ -29,6 +33,7 @@ axios.interceptors.request.use((config) => {
 
     return config;
 }, (error) => {
+
     //  对请求错误做些什么
     return Promise.reject(error);
 });

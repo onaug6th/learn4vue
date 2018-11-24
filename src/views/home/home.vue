@@ -34,7 +34,7 @@ export default {
                 { title : "模板渲染", intro : "模板渲染在界面上的前世今生", done : true},
                 { title : "组件生命周期与路由", intro : "操控组件的生老病死", done : true},
                 { title : "组件", intro : "像砌积木一样的页面", done : true},
-                { title : "依赖", intro : "项目的装备"},
+                { title : "依赖", intro : "项目的装备", done : true},
                 { title : "Hello world", intro : "实践才是真理"},
                 { title : "高级组件", intro : "是时候表演真正的技术了"}
             ]
