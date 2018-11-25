@@ -28,7 +28,7 @@ axios.interceptors.request.use((config) => {
 
     if(token){
         //  往axios默认请求头配置中设置token
-        axios.defaults.headers.common["token"] = token;
+        config.headers.common["token"] = token;
     }
 
     return config;

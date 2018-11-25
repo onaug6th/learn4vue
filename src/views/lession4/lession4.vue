@@ -124,13 +124,19 @@ src/provider/httpClient.js</pre>
                 就可以在每个页面组件中，使用 <code>this.$http</code> 来使用请求库发起请求。
             </p>
             <p>
-                使用axios发起请求，查看中文文档。
+                下面是一个简单使用axios发起请求的例子。
             </p>
+            <pre>axios.post(地址, 请求体, 配置);</pre>
+            <p>其他用法可用参考中文文档。</p>
             <p><a href="https://www.kancloud.cn/yunye/axios/234845">axios 中文文档</a></p>
             <p>
-                以本组件 lession4 为例，我们在 <code>mounted</code> 生命周期中，发起一个 post 类型的http请求。
+                以本当前页面 lession4 为例，我们在 <code>mounted</code> 生命周期中，发起一个 post 类型的http请求。
             </p>
             <img src="./img/img5.png">
+            <p>
+                在请求结束后，将返回信息打印到了控制台。
+            </p>
+            <img src="./img/img6.png">
         </div>
     </div>
 
