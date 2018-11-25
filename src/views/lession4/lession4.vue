@@ -95,7 +95,7 @@
             <pre>axios配置文件
 src/provider/httpClient.js</pre>
             <p>
-                <code>axios</code> 能够配置基础信息，请求拦截和响应拦截。
+                <code>axios</code> 能够配置基础信息，请求前拦截和响应后拦截。
             </p>
             <img src="./img/img3.png">
             <p>
@@ -103,7 +103,7 @@ src/provider/httpClient.js</pre>
             </p>
             <img src="./img/img2.png">
             <p>
-                最后导出我们配置完成的axios实例，就可用于项目里进行开发。
+                最后导出配置完成的axios实例，就可用于项目里进行开发。
             </p>
         </div>
         <hr>
