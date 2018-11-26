@@ -332,7 +332,7 @@ export default {
     computed:{
     },
 
-    //  生命周期钩子——更新后
+    //  生命周期钩子——视图更新后
     updated(){
         this.highlightAll();
     },

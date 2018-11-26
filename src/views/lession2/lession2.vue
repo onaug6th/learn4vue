@@ -76,7 +76,7 @@
                 </div>
                 <p>下面是一个分了二级模块的路由，管理员模块下拥有两个子路由。</p>
                 <img src="./img/img6.png">
-                <p>访问路由时，必须访问完整路径，才能访问到指定的子路由。</p>
+                <p>访问路由时，访问子路由名称，即可访问到指定的子路由。</p>
                 <pre class="language-javascript"><code>localhost:8080/#/admin/user</code></pre>
                 <p>在切换路由时，如果需要传递参数。只用在调用路由跳转方法里填写参数属性</p>
                 <img src="./img/img7.png">

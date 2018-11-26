@@ -40,6 +40,33 @@ const routes = [
         name: "lession5",
         component: () => import("./views/lession5/lession5.vue")
     },
+    //  管理员系统
+    {
+        path: "/admin",
+        name: "admin",
+        component: () => import("./views/admin/admin.vue"),
+        meta: {
+            shouldLogin : true
+        },
+        children: [
+            {
+                path: "/user",
+                name: "user",
+                component: () => import("./views/admin/user/user.vue"),
+                meta: {
+                    shouldLogin : true
+                }
+            },
+            {
+                path: "/reply",
+                name: "reply",
+                component: () => import("./views/admin/reply/reply.vue"),
+                meta: {
+                    shouldLogin : true
+                }
+            }
+        ]
+    },
     //  关于
     {
         path: "/about",
@@ -62,14 +89,15 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
 	
 	//  如果该路由设置了校验，检查是否登录
-	if (to.meta.shouldAdmin) {
+	if (to.meta.shouldLogin) {
 		
 		//	如果存在登录标记，允许进入该路由
-		if (localStorage.getItem("isLogin")) {
+		if (sessionStorage.getItem("isLogin")) {
 			next();
 		}
 		//	否则跳转回首页，或者去提示页（看业务需求）
 		else {
+            alert("您尚未登录");
 			next({
 				path: '/'
 			});
