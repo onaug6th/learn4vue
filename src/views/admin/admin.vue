@@ -11,7 +11,11 @@
             <button class="btn btn-success" @click="toggleMenu('reply')">
                 留言管理
             </button>
+            <button class="btn btn-warning" @click="toggleMenu('think')">
+                思考
+            </button>
         </div>
+        <hr>
         <transition name="fade">
             <router-view/>
         </transition>
@@ -24,7 +28,7 @@
 export default {
 
     //  实例属性——组件名称
-    name: 'admin',
+    name: 'think',
 
     //  实例属性——当前实例内部数据
     data(){

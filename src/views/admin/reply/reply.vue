@@ -2,7 +2,7 @@
     
     <div class="container">
         <h4>留言管理</h4>
-        <tableList :tableData="tableData"></tableList>
+        <tableList :tableData="tableData" @edit="edit"></tableList>
     </div>
 
 </template>
@@ -54,6 +54,7 @@ export default {
     //  实例属性——当前实例内部方法
     methods : {
 
+        //  获取表格数据
         getTableData(){
 
             const params = this.params;
@@ -68,7 +69,19 @@ export default {
                     alert(result.detailMsg);
                 }
 
+            }).catch(err =>{
+
+                console.info(`请求出问题了`, err);
+                
             });
+        },
+
+        /**
+         * 编辑
+         * @param {object} item 当前行对象
+         */
+        edit(item){
+            console.info(item);
         }
 
     }

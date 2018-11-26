@@ -49,6 +49,7 @@ const routes = [
             shouldLogin : true
         },
         children: [
+            //  用户管理
             {
                 path: "/user",
                 name: "user",
@@ -57,10 +58,20 @@ const routes = [
                     shouldLogin : true
                 }
             },
+            //  回复管理
             {
                 path: "/reply",
                 name: "reply",
                 component: () => import("./views/admin/reply/reply.vue"),
+                meta: {
+                    shouldLogin : true
+                }
+            },
+            //  思考
+            {
+                path: "/think",
+                name: "think",
+                component: () => import("./views/admin/think/think.vue"),
                 meta: {
                     shouldLogin : true
                 }

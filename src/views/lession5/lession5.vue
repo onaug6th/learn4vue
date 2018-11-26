@@ -61,8 +61,8 @@ export default {
 
             //  用于表单双向绑定数据
             formData: {
-                userName : "",
-                passWord : ""
+                userName : "august",
+                passWord : "1234"
             }
         }
     },
@@ -100,6 +100,8 @@ export default {
                 
                     //  如果返回状态码为正常，前端存储用户资料。并且跳转管理系统
                     if(result.code == "0"){
+
+                        alert("登录成功");
                         sessionStorage.setItem("isLogin", true);
                         sessionStorage.setItem("admin", JSON.stringify(result.data));
 
@@ -107,6 +109,7 @@ export default {
                         this.$router.push({
                             path : "/user"
                         });
+
                     }
                     /**
                      * 否则可能用户信息异常，“封号，密码或用户名不正常”
@@ -116,6 +119,8 @@ export default {
                         alert(result.detailMsg);
                     }
 
+                }).catch(err => {
+                    console.info("请求出问题了", err);
                 });
             }
         },

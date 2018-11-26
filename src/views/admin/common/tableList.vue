@@ -9,6 +9,7 @@
                 <th>标题</th>
                 <th>作者</th>
                 <th>内容</th>
+                <th>操作</th>
             </tr>
         </thead>
         <tbody>
@@ -17,6 +18,9 @@
                 <td>{{ item.commentPostName }}</td>
                 <td>{{ item.commentUserName }}</td>
                 <td>{{ item.commentValue }}</td>
+                <td>
+                    <button class="btn btn-primary" @click="edit(item)">编辑</button>
+                </td>
             </tr>
         </tbody>
     </table>
@@ -51,7 +55,13 @@ export default {
 
     //  实例属性——当前实例内部方法
     methods : {
-
+        /**
+         * 编辑
+         * @param {object} item 当前行对象
+         */
+        edit(item){
+            this.$emit("edit", item);
+        }
     }
 }
 </script>
