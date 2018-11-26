@@ -72,6 +72,10 @@ const routes = [
         path: "/about",
         name: "about",
         component: () => import("./views/about/about.vue")
+    },
+    {
+        path: "*",
+        component: () => import("./views/notFound/notFound.vue")
     }
 ];
 
