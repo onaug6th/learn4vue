@@ -36,7 +36,7 @@ export default {
                 { title : "组件", intro : "像砌积木一样的页面", done : true},
                 { title : "依赖", intro : "项目的装备", done : true},
                 { title : "Hello world", intro : "一个真正可用的例子", done : true},
-                { title : "高级组件", intro : "是时候表演真正的技术了"}
+                { title : "[扩展] 高级组件", intro : "是时候表演真正的技术了"}
             ]
         }
     },

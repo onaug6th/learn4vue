@@ -5,11 +5,11 @@
             <h3>管理员系统</h3>
         </div>
         <div>
-            <button class="btn btn-primary">
-                <router-link to="/user">用户管理</router-link>
+            <button class="btn btn-primary" @click="toggleMenu('user')">
+                用户管理
             </button>
-            <button class="btn btn-success">
-                <router-link to="/reply">留言管理</router-link>
+            <button class="btn btn-success" @click="toggleMenu('reply')">
+                留言管理
             </button>
         </div>
         <transition name="fade">
@@ -49,7 +49,15 @@ export default {
 
     //  实例属性——当前实例内部方法
     methods : {
-
+        /**
+         * 切换菜单
+         * @param {string} path 路径
+         */
+        toggleMenu(path){
+            this.$router.push({
+                path : `/${path}`
+            });
+        }
     }
 
 }
