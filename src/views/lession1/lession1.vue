@@ -52,8 +52,6 @@
                 <img src="./img/pic2.png">
                 </pre>
             </p>
-            <p>如果是渲染一个表格，像图片这样的，累死人。</p>
-            <img src="./img/pic1.png">
         </div>
         <h4>
             所以有了 ArtTemplate，Jsp，FreeMarker 之类的模板引擎，为的就是解放生产力。
