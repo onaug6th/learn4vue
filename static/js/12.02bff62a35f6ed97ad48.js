@@ -1,0 +1,2 @@
+webpackJsonp([12],{"5O+z":function(e,t,s){"use strict";Object.defineProperty(t,"__esModule",{value:!0});var i=s("XyMi"),a=Object(i.a)({name:"paperClip"},function(){var e=this.$createElement;return(this._self._c||e)("img",{staticClass:"emoji",staticStyle:{width:"20px"},attrs:{src:"https://assets-cdn.github.com/images/icons/emoji/paperclip.png"}})},[],!1,null,null,null);t.default=a.exports}});
+//# sourceMappingURL=12.02bff62a35f6ed97ad48.js.map

@@ -1,0 +1,2 @@
+webpackJsonp([11],{TKJ5:function(t,n,e){"use strict";Object.defineProperty(n,"__esModule",{value:!0});var a=e("XyMi");var i=function(t){e("gtiT")},c=Object(a.a)({name:"about",data:function(){return{}},components:{},mounted:function(){},methods:{}},function(){var t=this.$createElement;return(this._self._c||t)("div",{staticClass:"container"},[this._v("\n    你好，这里什么都没有\n")])},[],!1,i,"data-v-30bcdd92",null);n.default=c.exports},gtiT:function(t,n){}});
+//# sourceMappingURL=11.4bd5d9552287f15cce6c.js.map
